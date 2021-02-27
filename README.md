@@ -19,3 +19,5 @@ Created with CodeSandbox
 8.)create the Title and Inputfield components and import it in app.js anduse these components in app component with its props.
 
 9.)In app.js,change ul to p-tag in map fuction and add checkbox inputfield in the map function
+
+10.)create the toggle status fucntion that changes the checkbox and call it in checkboxchangehandler function with taskindex as argument and call the checkboxchangehandler in the onchange attribute of checkbox inputfield.

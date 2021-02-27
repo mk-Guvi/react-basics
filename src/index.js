@@ -36,6 +36,16 @@ const App = () => {
   };
 
   window.setInputText = setInputText;
+  const toggleStatus = (selectedTask) => {
+    setTasks(
+      tasks.map((task, taskIndex) => {
+        if (taskIndex === selectedTask) {
+          return { ...task, isComplete: !task.isComplete };
+        }
+        return task;
+      })
+    );
+  };
   return (
     <div>
       {/* <h1>ToDo List App</h1> */}
@@ -67,9 +77,16 @@ const App = () => {
       </button> */}
 
       {tasks.map((task, taskIndex, originalArray) => {
+        const checkboxChangeHandler = () => {
+          return toggleStatus(taskIndex);
+        };
         return (
           <p key={taskIndex}>
-            <input type="checkbox" checked={task.isComplete} />
+            <input
+              type="checkbox"
+              checked={task.isComplete}
+              onChange={checkboxChangeHandler}
+            />
             {task.text}
           </p>
         );
