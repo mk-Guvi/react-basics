@@ -17,14 +17,16 @@ const App = () => {
   ]);
 
   const addTask = () => {
-    const newTask = {
-      text: inputText,
-      isComplete: false
-    };
-    setTasks([...tasks, newTask]);
-    setInputText("");
+    if (inputText) {
+      //this prevents empty text
+      const newTask = {
+        text: inputText,
+        isComplete: false
+      };
+      setTasks([...tasks, newTask]);
+      setInputText("");
+    }
   };
-
   //since usestate is an array that has first element as default value and second as dispatch function(which allows u to change the state)
   //inputText can only be changed by setInputText
 
@@ -37,12 +39,13 @@ const App = () => {
   return (
     <div>
       {/* <h1>ToDo List App</h1> */}
+
       <Title title="ToDO List APP" />
       <InputField
-      inputText={inputText}
-      inputChangeHandler={inputChangeHandler} 
-      placeholder="add new tasks"
-      submit={addTask}
+        inputText={inputText}
+        inputChangeHandler={inputChangeHandler}
+        placeholder="add new tasks"
+        submit={addTask}
       />
 
       {/* <input
@@ -63,11 +66,14 @@ const App = () => {
         +
       </button> */}
 
-      <ul>
-        {tasks.map((task, taskIndex, originalArray) => {
-          return <li key={taskIndex}>{task.text}</li>;
-        })}
-      </ul>
+      {tasks.map((task, taskIndex, originalArray) => {
+        return (
+          <p key={taskIndex}>
+            <input type="checkbox" checked={task.isComplete} />
+            {task.text}
+          </p>
+        );
+      })}
     </div>
   );
 };

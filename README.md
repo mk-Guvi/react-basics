@@ -17,3 +17,5 @@ Created with CodeSandbox
 7.)create components folder and create Title.js and inputField.js files init.
 
 8.)create the Title and Inputfield components and import it in app.js anduse these components in app component with its props.
+
+9.)In app.js,change ul to p-tag in map fuction and add checkbox inputfield in the map function
