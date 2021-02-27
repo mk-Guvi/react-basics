@@ -13,3 +13,7 @@ Created with CodeSandbox
 5.)In app.js,imp0rt useState-hook and add value(inputText),onchange(inputchangehandler) attributes in input field.using usestate hook make the input text what we enter in keyboard.
 
 6.)add usestate to tasks and create a addtask function that updates the array with new task and call the addtask function in the onclick attribute of button.
+
+7.)create components folder and create Title.js and inputField.js files init.
+
+8.)create the Title and Inputfield components and import it in app.js anduse these components in app component with its props.

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import ReactDom from "react-dom";
+import Title from "./components/Title";
+import InputField from "./components/InputField";
 const root = document.getElementById("root");
 
 const App = () => {
@@ -14,12 +16,13 @@ const App = () => {
     }
   ]);
 
-  const addTask = (tasktext) => {
+  const addTask = () => {
     const newTask = {
-      text: tasktext,
+      text: inputText,
       isComplete: false
     };
     setTasks([...tasks, newTask]);
+    setInputText("");
   };
 
   //since usestate is an array that has first element as default value and second as dispatch function(which allows u to change the state)
@@ -29,23 +32,37 @@ const App = () => {
   const inputChangeHandler = (e) => {
     setInputText(e.target.value);
   };
+
   window.setInputText = setInputText;
   return (
     <div>
-      <h1>ToDo List App</h1>
-      <input
+      {/* <h1>ToDo List App</h1> */}
+      <Title title="ToDO List APP" />
+      <InputField
+      inputText={inputText}
+      inputChangeHandler={inputChangeHandler} 
+      placeholder="add new tasks"
+      submit={addTask}
+      />
+
+      {/* <input
         type="text"
         value={inputText}
         onChange={inputChangeHandler}
         placeholder="Add New Task"
       />
       <button
-        onClick={() => {
-          addTask(inputText);
-        }}
+        onClick={
+          //commenting this as we did not pass the tasktext as the parameter in addtask function
+          //   () => {
+          //   addTask(inputText);
+          // }
+          addTask
+        }
       >
         +
-      </button>
+      </button> */}
+
       <ul>
         {tasks.map((task, taskIndex, originalArray) => {
           return <li key={taskIndex}>{task.text}</li>;
