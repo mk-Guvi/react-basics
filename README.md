@@ -21,3 +21,13 @@ Created with CodeSandbox
 9.)In app.js,change ul to p-tag in map fuction and add checkbox inputfield in the map function
 
 10.)create the toggle status fucntion that changes the checkbox and call it in checkboxchangehandler function with taskindex as argument and call the checkboxchangehandler in the onchange attribute of checkbox inputfield.
+
+note:
+useEffect:
+It is a hook that runs whenever a compoenent is rendered
+It is used for handlind side effects.
+side effects are:
+if we want to fetch data from a remote server
+We want to store data in local storage
+
+11.)import useeffct in app.js,create useeffect function that sets the tasks in the localstorage of the browser in json format.Then access the local storege data in the tasks useState hook.

@@ -1,20 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactDom from "react-dom";
 import Title from "./components/Title";
 import InputField from "./components/InputField";
 const root = document.getElementById("root");
 
 const App = () => {
-  const [tasks, setTasks] = useState([
-    {
-      text: "Grocery",
-      isComplete: true
-    },
-    {
-      text: "TIffan",
-      isComplete: false
-    }
-  ]);
+  const [tasks, setTasks] = useState(
+    window.localStorage.getItem("tasks")
+      ? JSON.parse(window.localStorage.getItem("tasks"))
+      : [
+          {
+            text: "Grocery",
+            isComplete: true
+          },
+          {
+            text: "TIffan",
+            isComplete: false
+          }
+        ]
+  );
 
   const addTask = () => {
     if (inputText) {
@@ -36,6 +40,9 @@ const App = () => {
   };
 
   window.setInputText = setInputText;
+  useEffect(() => {
+    window.localStorage.setItem("tasks", JSON.stringify(tasks));
+  });
   const toggleStatus = (selectedTask) => {
     setTasks(
       tasks.map((task, taskIndex) => {
