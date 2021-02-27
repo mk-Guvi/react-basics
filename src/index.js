@@ -5,6 +5,7 @@ import InputField from "./components/InputField";
 const root = document.getElementById("root");
 
 const App = () => {
+  //When we parse JSON, it means we are converting the string into a JSON object by following the JSON specification, where we can then use it in any way we wish.
   const [tasks, setTasks] = useState(
     window.localStorage.getItem("tasks")
       ? JSON.parse(window.localStorage.getItem("tasks"))
@@ -41,7 +42,7 @@ const App = () => {
 
   window.setInputText = setInputText;
   useEffect(() => {
-    window.localStorage.setItem("tasks", JSON.stringify(tasks));
+    window.localStorage.setItem("tasks", JSON.stringify(tasks));//The JSON. stringify() method converts a JavaScript object or value to a JSON string,
   });
   const toggleStatus = (selectedTask) => {
     setTasks(
