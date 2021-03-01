@@ -33,3 +33,9 @@ We want to store data in local storage
 11.)import useeffct in app.js,create useeffect function that sets the tasks in the localstorage of the browser in json format.Then access the local storege data in the tasks useState hook.
 
 12.)In InputField.js,add useEffect and useRef hook.use useref to focus the input on field by adding ref attribute in the input filed and using useEffect hook for focussing only one using dependency array init.
+
+13.)create hooks folder and create usehover.js file init.In usehover.js,create a custom hooks called useHover that adds eventlistener which returns hivered in console using useEffect and useRef hook.
+
+note:custom hooks are the function that returns collection of react hooks
+
+14.)In title.js,import the useHover custom hook and add ref attribute to the h1-tag.
