@@ -31,3 +31,5 @@ if we want to fetch data from a remote server
 We want to store data in local storage
 
 11.)import useeffct in app.js,create useeffect function that sets the tasks in the localstorage of the browser in json format.Then access the local storege data in the tasks useState hook.
+
+12.)In InputField.js,add useEffect and useRef hook.use useref to focus the input on field by adding ref attribute in the input filed and using useEffect hook for focussing only one using dependency array init.
