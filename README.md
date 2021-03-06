@@ -48,12 +48,14 @@ RULES of Hooks:
 
 3. Order of execution of the hooks should never change.That is you should never put the hooks under any if-condition or any loops as the hook will be deleted if the cndtion fails which is always be tracked by react .
 
-15.)create ErrorBoundary.js in components folder.create errorboundary class component that returns some jsx if error occurs else renders the actual child component using getDerivedStateFromError method of component class.
+   15.)create ErrorBoundary.js in components folder.create errorboundary class component that returns some jsx if error occurs else renders the actual child component using getDerivedStateFromError method of component class.
 
-16.)Enclose the title component under the errorbounadary tags.
+   16.)Enclose the title component under the errorbounadary tags.
 
 Note:
 THree levels of errorboundary:
+
+the reason to use error boundary is that to avoid try-catch as it changes the order of execution of react.
 
 1.)return null if the component is loew priority
 
