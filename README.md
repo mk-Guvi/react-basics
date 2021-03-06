@@ -41,8 +41,22 @@ note:custom hooks are the function that returns collection of react hooks
 14.)In title.js,import the useHover custom hook and add ref attribute to the h1-tag.
 
 RULES of Hooks:
-1) React Hooks can’t be used outside react component
 
-2) Two versions of React should never mix
+1. React Hooks can’t be used outside react component
 
-3) Order of execution of the hooks should never change.That is you should never put the hooks under any if-condition or any loops as the hook will be deleted if the cndtion fails which is always be tracked by react .
+2. Two versions of React should never mix
+
+3. Order of execution of the hooks should never change.That is you should never put the hooks under any if-condition or any loops as the hook will be deleted if the cndtion fails which is always be tracked by react .
+
+15.)create ErrorBoundary.js in components folder.create errorboundary class component that returns some jsx if error occurs else renders the actual child component using getDerivedStateFromError method of component class.
+
+16.)Enclose the title component under the errorbounadary tags.
+
+Note:
+THree levels of errorboundary:
+
+1.)return null if the component is loew priority
+
+2.)return with some jsx if the component is not high priority
+
+3.)return with the developer details if the component if high priority.

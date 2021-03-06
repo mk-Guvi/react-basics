@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import ReactDom from "react-dom";
 import Title from "./components/Title";
 import InputField from "./components/InputField";
+import ErrorBoundary from "./components/ErrorBoundary";
 const root = document.getElementById("root");
 //Why we r using useRef?
 //To directly manipulate Dom from inside react
@@ -66,8 +67,9 @@ const App = () => {
   return (
     <div>
       {/* <h1>ToDo List App</h1> */}
-
-      <Title title="ToDO List APP" />
+      <ErrorBoundary>
+        <Title title="ToDO List APP" />
+      </ErrorBoundary>
       <InputField
         inputText={inputText}
         inputChangeHandler={inputChangeHandler}

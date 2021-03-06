@@ -5,7 +5,9 @@ import useHover from "../hooks/useHover";
 
 const Title = ({ title }) => {
   const targetElement = useHover();
+// undefined()//for errorboundary
   return <h1 ref={targetElement}>{title}</h1>;
+
 };
 
 export default Title;
