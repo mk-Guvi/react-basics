@@ -39,3 +39,10 @@ We want to store data in local storage
 note:custom hooks are the function that returns collection of react hooks
 
 14.)In title.js,import the useHover custom hook and add ref attribute to the h1-tag.
+
+RULES of Hooks:
+1) React Hooks can’t be used outside react component
+
+2) Two versions of React should never mix
+
+3) Order of execution of the hooks should never change.That is you should never put the hooks under any if-condition or any loops as the hook will be deleted if the cndtion fails which is always be tracked by react .
